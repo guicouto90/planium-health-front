@@ -1,0 +1,82 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+/* .container-fluid {
+    height: 100%;
+    overflow-y: hidden;
+} */
+/* .body-film {
+    min-height: 100%;
+    overflow-y: scroll;
+} */
+::placeholder{
+    color:white!important;
+    font-size: 11px;
+    font-style: italic;
+}
+label{
+    font-size: 12px;
+    font-weight: 500;
+}
+.cartao{
+    background:#62d599;
+    padding:15px;
+    font-weight: 700;
+}
+.cartao:hover{
+    background:#4ba375;
+    cursor: pointer;
+}
+.cartao-primeiro{
+    background:#4348ed;
+    padding:15px;
+    font-weight: 400;
+    height: 150px;
+}
+.cartao-inativo{
+    background-color:dimgrey;
+    padding:15px;
+    font-weight: 400;
+    height: 150px;
+}
+.cartao-etapa{
+    background:darkgray;
+    padding:5px;
+    font-weight: 700;
+    color: dimgrey;
+    height:max-content;
+    height: 150px;
+}
+.nome_cliente{
+    font-weight: 700;
+    font-size:18px;
+    color: #3c45ed;
+    cursor:pointer;
+}
+.plano_ppu{
+    font-weight: 700;
+    color:darkgray;
+}
+.status_plano{
+    font-weight: 700;
+}
+.tipo_avaliacao{
+    font-size: 10px;
+    background-color: #462af5;
+    color: white;
+}
+#foto-user{
+    position:relative;
+    top:-100px;
+    left: 10px;;
+    z-index: -1;;
+}
+/* #capa-foto{
+    position:relative;
+    top:0;
+    left:0;
+} */
+.card{
+    border-radius: 15px!important;
+}

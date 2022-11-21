@@ -1,0 +1,33 @@
+
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 100px;">
+    <div class="card p-3">
+        <form [formGroup]="signUpForm">
+            <h1> PÁGINA DE INSCRIÇÃO </h1>
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input formControlName="name" type="text" id="name" class="form-control">
+            </div>
+            <small *ngIf="signUpForm.controls['name'].dirty && signUpForm.hasError('required', 'name')" class="text-danger">* O Nome é obrigatório.</small>
+
+            <div class="form-group">
+                <label for="name">Email</label>
+                <input formControlName="email" type="text" id="Email" class="form-control">
+            </div>
+            <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'email')" class="text-danger">* O Email é obrigatório.</small>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input formControlName="password" type="password" id="password" class="form-control">
+            </div>
+            <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" class="text-danger">* A senha é obrigatória.</small>
+
+            <div class="form-group" style="margin-top: 10px;">
+                <button (click)="onSignUp()" class="btn btn-success" type="submit">Se inscrever</button>
+            </div>
+
+            <div class="text-center pt-4 text-muted" style="margin-top: 10px;" routerLink="/login">
+                <a id="forget"> Já tem uma conta? Clique aqui</a>
+            </div>
+        </form>
+    </div>
+</div>

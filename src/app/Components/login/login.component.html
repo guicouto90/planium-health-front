@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 100px;">
+    <div class="card p-3">
+        <form [formGroup]="loginForm">
+            <p style="font-weight: bold;"> PÁGINA DE LOGIN </p>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input formControlName="email" type="text" id="email" class="form-control">
+            </div>
+            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')" class="text-danger">* O Email é obrigatório.</small>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input formControlName="password" type="password" id="password" class="form-control">
+            </div>
+            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')" class="text-danger">* A Senha é obrigatória.</small>
+
+            <div class="form-group" style="margin-top: 10px;">
+                <button (click)="onSubmit()" [disabled]="loginForm.invalid" class="btn btn-success" type="submit">Entrar</button>
+            </div>
+
+            <div class="text-center pt-4 text-muted" style="margin-top: 10px;" routerLink="/signup">
+                <a id="forget"> Não possui uma conta? Clique aqui</a>
+            </div>
+        </form>
+    </div>
+</div>

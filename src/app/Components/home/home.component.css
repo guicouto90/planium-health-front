@@ -1,0 +1,32 @@
+
+	html, body {
+		height: 100%;
+		margin: 0;
+	}
+	::placeholder{
+		color:white!important;
+		font-size: 11px;
+		font-style: italic;
+	}
+	label{
+		font-size: 12px;
+		font-weight: 500;
+	}
+	.modal-header,.modal-body,.modal-footer{
+		background-color: #462af5;
+		color:white;
+		border:0;
+	}
+	.modal{
+		--bs-modal-bg:0;
+		border:0;
+	}
+	.cartao-tela1{
+		background:#62d599;
+		padding:10px;
+		font-weight: 700;
+	}
+	.cartao-tela1:hover{
+		background:#4ba375;
+		cursor: pointer;
+	}
