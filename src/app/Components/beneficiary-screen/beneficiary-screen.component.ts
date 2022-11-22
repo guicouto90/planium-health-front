@@ -13,7 +13,8 @@ export class BeneficiaryScreenComponent implements OnInit {
   ngOnInit(): void {
     this.service.data.subscribe((dataResponse) => {
       this.beneficiary = dataResponse;
-      console.log(dataResponse);
+      if (this.beneficiary?.beneficiario.situacao !== 'Ativo')
+        alert('Benficiário está com o plano inativo');
     });
   }
 }

@@ -17,7 +17,7 @@ import { BeneficiaryScreenComponent } from './../beneficiary-screen/beneficiary-
 })
 export class HomeComponent implements OnInit {
   identifierForm!: FormGroup;
-  @Input() data: any;
+  data: any;
 
   constructor(
     private fb: FormBuilder,
@@ -31,16 +31,21 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     // 557208610
-
+    // 481561331, 557208610, 557271150, 863925570, 865333394 e 987122320
     if (this.identifierForm.valid) {
       // Mandar informação para o banco
-
       this.homeservice
         .getBeneficiaryById(this.identifierForm.value.identifier)
-        .subscribe((test) => {
-          this.router.navigateByUrl('/beneficiary');
+        .subscribe((response) => {
+          this.data = response as Beneficiary;
+          if (this.data.beneficiario.plano.nomePlano !== 'amil-ppu') {
+            alert('Beneficiario não possui plano Amil PPU');
+          } else {
+            this.router.navigateByUrl('/beneficiary');
+          }
+          // this.router.navigateByUrl('/beneficiary');
         });
     } else {
       // Mandar erro
