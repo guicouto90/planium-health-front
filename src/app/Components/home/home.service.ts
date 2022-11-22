@@ -8,7 +8,7 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class HomeService {
-  private readonly API: string = 'http://localhost:3002/beneficiary';
+  private readonly API: string = 'http://localhost:3001/user/beneficiary';
 
   data = new Subject<any>().asObservable();
 
@@ -22,15 +22,5 @@ export class HomeService {
       alert(error);
     }
     return this.data;
-  }
-
-  async getBeneficiaryId(id: string): Promise<any> {
-    try {
-      const { data } = await axios.get(`${this.API}/${id}`);
-      this.data = data;
-      console.log(data);
-    } catch (error) {
-      alert(error);
-    }
   }
 }

@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 import { Beneficiary } from './home';
 import { BeneficiaryScreenComponent } from './../beneficiary-screen/beneficiary-screen.component';
 
+declare var window: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,6 +20,7 @@ import { BeneficiaryScreenComponent } from './../beneficiary-screen/beneficiary-
 export class HomeComponent implements OnInit {
   identifierForm!: FormGroup;
   data: any;
+  formModal: any;
 
   constructor(
     private fb: FormBuilder,
@@ -26,12 +29,15 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById('errorModal')
+    );
     this.identifierForm = this.fb.group({
       identifier: ['', Validators.required],
     });
   }
 
-  async onSubmit() {
+  onSubmit() {
     // 557208610
     // 481561331, 557208610, 557271150, 863925570, 865333394 e 987122320
     if (this.identifierForm.valid) {
@@ -39,17 +45,26 @@ export class HomeComponent implements OnInit {
       this.homeservice
         .getBeneficiaryById(this.identifierForm.value.identifier)
         .subscribe((response) => {
+          console.log(response);
           this.data = response as Beneficiary;
-          if (this.data.beneficiario.plano.nomePlano !== 'amil-ppu') {
-            alert('Beneficiario não possui plano Amil PPU');
+          if (!this.data) {
+            this.formModal.show();
           } else {
             this.router.navigateByUrl('/beneficiary');
           }
-          // this.router.navigateByUrl('/beneficiary');
+          /* if (this.data.beneficiario.planName !== 'amil-ppu') {
+            alert('Beneficiario não possui plano Amil PPU');
+          } else {
+            this.router.navigateByUrl('/beneficiary');
+          } */
         });
     } else {
       // Mandar erro
       console.log('Deu ruim');
     }
+  }
+
+  onClickModalButton() {
+    this.formModal.hide();
   }
 }
