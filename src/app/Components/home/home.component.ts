@@ -21,6 +21,19 @@ export class HomeComponent implements OnInit {
   identifierForm!: FormGroup;
   data: any;
   formModal: any;
+  modalLogin: any;
+  registerModal: any;
+
+  login = {
+    user: '',
+    password: '',
+  };
+
+  register = {
+    user: '',
+    password: '',
+    confirmPassword: '',
+  };
 
   constructor(
     private fb: FormBuilder,
@@ -32,9 +45,16 @@ export class HomeComponent implements OnInit {
     this.formModal = new window.bootstrap.Modal(
       document.getElementById('errorModal')
     );
+    this.modalLogin = new window.bootstrap.Modal(
+      document.getElementById('loginModal')
+    );
+    this.registerModal = new window.bootstrap.Modal(
+      document.getElementById('registroModal')
+    );
     this.identifierForm = this.fb.group({
       identifier: ['', Validators.required],
     });
+    this.modalLogin.show();
   }
 
   onSubmit() {
@@ -66,5 +86,10 @@ export class HomeComponent implements OnInit {
 
   onClickModalButton() {
     this.formModal.hide();
+  }
+
+  onClickRegisterButton() {
+    this.modalLogin.hide();
+    this.registerModal.show();
   }
 }

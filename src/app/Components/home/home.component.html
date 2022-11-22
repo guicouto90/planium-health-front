@@ -68,18 +68,72 @@
                 <div class="modal-body">
                     <div>
                         <label for="user">Usuario</label>
-                        <input class="form-control" type="email" id="user" />
+                        <input
+                          class="form-control"
+                          type="email"
+                          id="user"
+                          [(ngModel)]="login.user"
+                          />
                     </div>
                     <div class="mt-3">
                         <label for="pass">Senha</label>
-                        <input class="form-control" type="password" id="pass" />
+                        <input
+                          class="form-control"
+                          type="password"
+                          id="pass"
+                          [(ngModel)]="login.password"
+                        />
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="pesquisar" class="btn btn-primary">Entrar</button>
+                  <button (click)="onClickRegisterButton()" type="button" id="cadastro" class="btn btn-primary">Cadastre-se aqui</button>
+                  <button type="button" id="pesquisar" class="btn btn-primary">Entrar</button>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Modal REGISTRO -->
+    <div class="modal modal-sm fade" id="registroModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">Cadastro</h1>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="user">Usuario</label>
+              <input
+                class="form-control"
+                type="email"
+                id="user"
+                [(ngModel)]="register.user"
+              />
+            </div>
+            <div class="mt-3">
+              <label for="pass">Senha</label>
+              <input
+                class="form-control"
+                type="password"
+                id="pass"
+                [(ngModel)]="register.password"
+              />
+            </div>
+            <div class="mt-3">
+              <label for="confirmPass">Confirme a Senha</label>
+              <input
+                class="form-control"
+                type="confirmPass"
+                id="confirmPass"
+                [(ngModel)]="register.confirmPassword"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="pesquisar" class="btn btn-primary">Cadastrar</button>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Modal ERROR -->
     <div class="modal fade" id="errorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -93,7 +147,13 @@
             Não foi encontrado nenhum beneficiário com esse número!
           </div>
           <div class="modal-footer">
-            <button (click)="onClickModalButton()" type="button" id="pesquisar" class="btn btn-primary">Pesquisar novamente</button>
+            <button
+              (click)="onClickModalButton()"
+              type="button"
+              id="pesquisar"
+              class="btn btn-primary"
+            >Pesquisar novamente
+          </button>
           </div>
         </div>
       </div>

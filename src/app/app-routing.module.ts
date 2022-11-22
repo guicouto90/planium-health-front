@@ -6,14 +6,19 @@ import { HomeComponent } from './Components/home/home.component';
 import { BeneficiaryScreenComponent } from './Components/beneficiary-screen/beneficiary-screen.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'beneficiary', component: BeneficiaryScreenComponent }
+  { path: 'beneficiary', component: BeneficiaryScreenComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
