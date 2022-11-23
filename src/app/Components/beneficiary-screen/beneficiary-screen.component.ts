@@ -1,6 +1,7 @@
 import { Beneficiary } from './../home/home';
 import { Component, Input, OnInit } from '@angular/core';
 import { HomeService } from '../home/home.service';
+import { Router } from '@angular/router';
 
 declare var window: any;
 
@@ -13,7 +14,7 @@ export class BeneficiaryScreenComponent implements OnInit {
   beneficiary: Beneficiary | undefined;
   formModal: any;
 
-  constructor(private service: HomeService) {}
+  constructor(private service: HomeService, private router: Router) {}
 
   ngOnInit(): void {
     this.formModal = new window.bootstrap.Modal(
@@ -26,5 +27,10 @@ export class BeneficiaryScreenComponent implements OnInit {
       }
     });
     // this.formModal.show();
+  }
+
+  onClickLogoffButton() {
+    localStorage.removeItem('accredited');
+    this.router.navigateByUrl('/home');
   }
 }

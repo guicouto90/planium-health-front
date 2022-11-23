@@ -8,7 +8,7 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class HomeService {
-  private readonly API: string = 'http://localhost:3001/user/beneficiary';
+  private readonly API: string = 'http://localhost:3001';
 
   data = new Subject<any>().asObservable();
 
@@ -16,11 +16,48 @@ export class HomeService {
 
   getBeneficiaryById(id: string): Observable<Beneficiary | string> {
     try {
-      this.data = this.http.get<Beneficiary>(`${this.API}/${id}`);
+      this.data = this.http.get<Beneficiary>(
+        `${this.API}/user/beneficiary/${id}`
+      );
     } catch (error) {
       console.log('TA AQUI?');
       alert(error);
     }
     return this.data;
   }
+
+  async loginAccredited(
+    identifier: string,
+    password: string
+  ): Promise<Token | void> {
+    try {
+      const response = (await axios.post(`${this.API}/auth/login/accredited`, {
+        identifier,
+        password,
+      })) as Token;
+      return response;
+    } catch (error) {
+      alert('Login ou senha inválidos');
+    }
+  }
+
+  async registerAccredited(
+    identifier: string,
+    password: string
+  ): Promise<void> {
+    try {
+      await axios.post(`${this.API}/user/accredited`, {
+        identifier,
+        password,
+      });
+    } catch (error) {
+      throw new Error('Erro na requisição');
+    }
+  }
+}
+
+interface Token {
+  data: {
+    token: string;
+  };
 }
