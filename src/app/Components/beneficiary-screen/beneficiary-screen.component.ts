@@ -1,5 +1,5 @@
-import { Beneficiary } from './../home/home';
-import { Component, Input, OnInit } from '@angular/core';
+import { Beneficiary } from '../home/home';
+import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home/home.service';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,7 @@ declare var window: any;
   templateUrl: './beneficiary-screen.component.html',
   styleUrls: ['./beneficiary-screen.component.css'],
 })
+
 export class BeneficiaryScreenComponent implements OnInit {
   beneficiary: Beneficiary | undefined;
   formModal: any;

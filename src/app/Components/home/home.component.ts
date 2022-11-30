@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
@@ -16,6 +15,7 @@ declare var window: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
+
 export class HomeComponent implements OnInit {
   identifierForm!: FormGroup;
   loginForm!: FormGroup;
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     private fb: FormBuilder,
     private homeService: HomeService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.formModal = new window.bootstrap.Modal(
@@ -69,25 +69,23 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    // 557208610
-    // 481561331, 557208610, 557271150, 863925570, 865333394 e 987122320
+    // 557208610, 481561331, 557271150, 863925570, 865333394 e 987122320
     if (this.identifierForm.valid) {
       // Mandar informação para o banco
       this.homeService
         .getBeneficiaryById(this.identifierForm.value.identifier)
         .subscribe((response) => {
-          console.log(response);
           this.data = response as Beneficiary;
           if (!this.data) {
             this.formModal.show();
-          } else {
-            this.router.navigateByUrl('/beneficiary');
-          }
-          /* if (this.data.beneficiario.planName !== 'amil-ppu') {
+          } else if (
+            this.data.planCode !== '90902' ||
+            this.data.planCode !== '90911'
+          ) {
             alert('Beneficiario não possui plano Amil PPU');
           } else {
             this.router.navigateByUrl('/beneficiary');
-          } */
+          }
         });
     } else {
       // Mandar erro
@@ -106,7 +104,7 @@ export class HomeComponent implements OnInit {
 
   onClickLogoffButton() {
     localStorage.removeItem('accredited');
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/');
     this.modalLogin.show();
   }
 

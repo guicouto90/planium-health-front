@@ -1,0 +1,381 @@
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  ::placeholder {
+    color: white !important;
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .cartao {
+    background: #62d599;
+    padding: 15px;
+    font-weight: 700;
+  }
+
+  .cartao:hover {
+    background: #4ba375;
+    cursor: pointer;
+  }
+
+  #adicionar {
+    background: orange;
+    padding: 15px;
+    font-weight: 700;
+  }
+
+  #adicionar:hover {
+    background: darkorange;
+    cursor: pointer;
+  }
+
+  .cartao-primeiro {
+    background: #4348ed;
+    padding: 15px;
+    font-weight: 400;
+    height: 150px;
+  }
+
+  .cartao-inativo {
+    background-color: dimgrey;
+    padding: 15px;
+    font-weight: 400;
+    height: 150px;
+  }
+
+  .cartao-etapa {
+    background: darkgray;
+    padding: 5px;
+    font-weight: 700;
+    color: dimgrey;
+    height: max-content;
+    height: 150px;
+  }
+
+  .nome_cliente {
+    font-weight: 700;
+    color: #3c45ed;
+    cursor: pointer;
+  }
+
+  .plano_ppu {
+    font-weight: 700;
+    color: darkgray;
+  }
+
+  .status_plano {
+    font-weight: 700;
+  }
+
+  .tipo_avaliacao {
+    font-size: 10px;
+    background-color: #461BFF;
+    color: white;
+  }
+
+  #foto-user {
+    position: relative;
+    top: -100px;
+    left: 10px;
+    ;
+    z-index: -1;
+    ;
+  }
+
+  .dropdown-toggle {
+    border: 1px solid #3c45ed !important;
+    font-size: 12px !important;
+  }
+
+  .filter-option-inner-inner {
+    color: #3c45ed !important;
+    font-style: italic !important;
+  }
+
+  .bootstrap-select .dropdown-menu li a {
+    font-size: 11px;
+  }
+
+  .txt-lista-proc {
+    margin-top: 5px;
+    font-size: 9px;
+    color: white;
+    background: #3c45ed;
+    text-align: start;
+    border-radius: 10px;
+    height: min-content;
+    margin-right: 5px;
+  }
+
+  .txt-lista-proc:hover {
+    background: #00ADFF;
+    cursor: pointer;
+  }
+
+  .txt_avaliacao {
+    margin-top: 5px;
+    font-size: 12px;
+    color: white;
+    background: #3c45ed;
+    text-align: start;
+    border-radius: 10px;
+    height: min-content;
+    margin-right: 5px;
+  }
+
+  .txt_faces {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #3c45ed;
+    background: #fff;
+    text-align: start;
+    border-radius: 10px;
+    height: min-content;
+    margin-right: 5px;
+  }
+
+  .caixa_avaliacao {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background: #00ADFF;
+    padding: 15px;
+    color: white;
+    font-weight: 700;
+    min-height: 50vh;
+  }
+
+  .titulo_pagina {
+    background: #00ADFF;
+    padding: 15px;
+    color: white;
+    font-weight: 700;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .numero_dente {
+    font-size: 20px;
+    color: aliceblue;
+  }
+
+  .card {
+    border-radius: 15px !important;
+  }
+
+
+  /* PARTE DA ESTILIZAÇÃO DOS DENTES */
+  :root {
+    --dist: 2px;
+    --dist2: 5px;
+  }
+
+  #dente_18 {
+    position: relative;
+    left: 0;
+    top: 6px;
+  }
+
+  #dente_17 {
+    position: relative;
+    left: var(--dist);
+    top: 4px;
+  }
+
+  #dente_16 {
+    position: relative;
+    left: calc(var(--dist)*2);
+    top: 3px;
+  }
+
+  #dente_15 {
+    position: relative;
+    left: calc(var(--dist)*3);
+    top: 0;
+  }
+
+  #dente_14 {
+    position: relative;
+    left: calc(var(--dist)*4);
+    top: 6px;
+  }
+
+  #dente_13 {
+    position: relative;
+    left: calc(var(--dist)*5);
+    top: -10px;
+  }
+
+  #dente_12 {
+    position: relative;
+    left: calc(var(--dist)*6);
+    top: 2px;
+  }
+
+  #dente_11 {
+    position: relative;
+    left: calc(var(--dist)*7);
+    top: 2px;
+  }
+
+  /* divisao */
+
+  #dente_21 {
+    position: relative;
+    left: calc(var(--dist)*8);
+    top: 2px;
+  }
+
+  #dente_22 {
+    position: relative;
+    left: calc(var(--dist)*9);
+    top: 1px;
+  }
+
+  #dente_23 {
+    position: relative;
+    left: calc(var(--dist)*10);
+    top: -11px;
+  }
+
+  #dente_24 {
+    position: relative;
+    left: calc(var(--dist)*11);
+    top: 2px;
+  }
+
+  #dente_25 {
+    position: relative;
+    left: calc(var(--dist)*12);
+    top: 0;
+  }
+
+  #dente_26 {
+    position: relative;
+    left: calc(var(--dist)*13);
+    top: 2px;
+  }
+
+  #dente_27 {
+    position: relative;
+    left: calc(var(--dist)*14);
+    top: 2px;
+  }
+
+  #dente_28 {
+    position: relative;
+    left: calc(var(--dist)*15);
+    top: 4px;
+  }
+
+
+  #dente_48 {
+    position: relative;
+    left: -3px;
+    bottom: 0;
+  }
+
+  #dente_47 {
+    position: relative;
+    left: -5px;
+    bottom: -2px;
+  }
+
+  #dente_46 {
+    position: relative;
+    left: -2px;
+    bottom: -3px;
+  }
+
+  #dente_45 {
+    position: relative;
+    left: calc(var(--dist2));
+    bottom: 0;
+  }
+
+  #dente_44 {
+    position: relative;
+    left: calc(var(--dist2));
+    bottom: 0;
+  }
+
+  #dente_43 {
+    position: relative;
+    left: calc(var(--dist2)*2);
+    bottom: -13px;
+  }
+
+  #dente_42 {
+    position: relative;
+    left: calc(var(--dist2)*3.4);
+    bottom: -1px;
+  }
+
+  #dente_41 {
+    position: relative;
+    left: calc(var(--dist2)*5);
+    bottom: 0;
+  }
+
+  /* divisao */
+
+  #dente_31 {
+    position: relative;
+    left: calc(var(--dist2)*7.8);
+    top: 4px;
+  }
+
+  #dente_32 {
+    position: relative;
+    left: calc(var(--dist2)*10.5);
+    bottom: -3px;
+  }
+
+  #dente_33 {
+    position: relative;
+    left: calc(var(--dist2)*12);
+    bottom: -12px;
+  }
+
+  #dente_34 {
+    position: relative;
+    left: calc(var(--dist2)*12.5);
+    bottom: 1px;
+  }
+
+  #dente_35 {
+    position: relative;
+    left: calc(var(--dist2)*14.2);
+    bottom: 3px;
+  }
+
+  #dente_36 {
+    position: relative;
+    left: calc(var(--dist2)*15);
+    bottom: 0;
+  }
+
+  #dente_37 {
+    position: relative;
+    left: calc(var(--dist2)*14.5);
+    bottom: 0;
+  }
+
+  #dente_38 {
+    position: relative;
+    left: calc(var(--dist2)*16);
+    bottom: 2px;
+  }
+
+  svg:hover path {
+    fill: #34C04C;
+    stroke: blue;
+    cursor: pointer;
+  }

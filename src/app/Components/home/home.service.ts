@@ -20,7 +20,6 @@ export class HomeService {
         `${this.API}/user/beneficiary/${id}`
       );
     } catch (error) {
-      console.log('TA AQUI?');
       alert(error);
     }
     return this.data;
